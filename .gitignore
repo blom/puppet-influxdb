@@ -1,0 +1,6 @@
+/.vagrant
+/.yardoc
+/Gemfile.lock
+/Vagrantfile
+/doc
+/pkg

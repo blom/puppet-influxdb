@@ -1,0 +1,2 @@
+class { 'influxdb::ruby':
+}

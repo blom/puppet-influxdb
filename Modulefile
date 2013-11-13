@@ -1,0 +1,8 @@
+name "blom-influxdb"
+version "0.0.0"
+author "Ørjan Blom"
+project_page "https://github.com/blom/puppet-influxdb"
+source "https://github.com/blom/puppet-influxdb"
+license "ISC"
+summary "InfluxDB module"
+description "InfluxDB module"
