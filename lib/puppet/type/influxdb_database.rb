@@ -6,4 +6,7 @@ Puppet::Type.newtype(:influxdb_database) do
     desc "Database name"
     isnamevar
   end
+
+  newparam :config do
+  end
 end
