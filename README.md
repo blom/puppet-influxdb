@@ -35,7 +35,11 @@ Installs the InfluxDB Ruby library.
 
 Takes the following optional attributes:
 
-* `package_ensure`: The `ensure` passed to `package` (default: `present`).
+* `package_ensure`: Ensure the presence (`present` or `installed`) or absence
+  (`absent`) of the gem (default: `present`). The `package` type is currently
+  not used to install the gem due to a bug in Puppet - see the [manifest][3]
+  for more information.
 
 [1]: http://influxdb.org/
 [2]: http://docs.puppetlabs.com/references/latest/type.html#package-provider-rpm
+[3]: https://github.com/blom/puppet-influxdb/blob/master/manifests/ruby.pp
