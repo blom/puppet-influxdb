@@ -5,12 +5,12 @@ puppet-influxdb
 
 Puppet module for [InfluxDB][1].
 
-Providers for managing databases and users are coming soon.
-
 Usage
 -----
 
-### influxdb::server
+### Classes
+
+#### influxdb::server
 
 Installs the InfluxDB server.
 
@@ -26,7 +26,7 @@ Takes the following optional attributes:
 Note that `influxdb::server` only works on systems with an [RPM provider][2] at
 the moment.
 
-### influxdb::ruby
+#### influxdb::ruby
 
 Installs the InfluxDB Ruby library.
 
@@ -40,6 +40,40 @@ Takes the following optional attributes:
   not used to install the gem due to a bug in Puppet - see the [manifest][3]
   for more information.
 
+### Providers
+
+The providers can take an optional configuration hash where the keys correspond
+to the values that the [Ruby client][4] accepts. For example:
+
+    $influxdb_config = {
+      'host'     => 'localhost',
+      'port'     => 8086,
+      'username' => 'root',
+      'password' => 'root',
+    }
+
+    Influxdb_database {
+      config => $influxdb_config,
+    }
+
+    influxdb_database { ['foo', 'bar']:
+      ensure => present,
+    }
+
+#### influxdb_database
+
+Manages databases.
+
+    influxdb_database { 'database_name':
+      ensure => present,
+    }
+
+Takes the following attributes:
+
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of a database.
+* `config`: Optional configuration hash.
+
 [1]: http://influxdb.org/
 [2]: http://docs.puppetlabs.com/references/latest/type.html#package-provider-rpm
 [3]: https://github.com/blom/puppet-influxdb/blob/master/manifests/ruby.pp
+[4]: https://github.com/influxdb/influxdb-ruby
