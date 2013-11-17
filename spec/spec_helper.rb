@@ -1,4 +1,5 @@
 require "rspec-puppet"
+require "webmock/rspec"
 
 fixture_path = File.expand_path("../fixtures", __FILE__)
 
