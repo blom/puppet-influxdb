@@ -57,10 +57,10 @@ The providers can take an optional configuration hash where the keys correspond
 to the values that the [Ruby client][4] accepts. For example:
 
     $influxdb_config = {
-      'host'     => 'localhost',
-      'port'     => 8086,
-      'username' => 'root',
-      'password' => 'root',
+      host     => 'localhost',
+      port     => 8086,
+      username => 'root',
+      password => 'root',
     }
 
     Influxdb_database {
