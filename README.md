@@ -5,6 +5,17 @@ puppet-influxdb
 
 Puppet module for [InfluxDB][1].
 
+Installation
+------------
+
+### Puppet Forge
+
+Coming soon.
+
+### Puppetfile
+
+    mod "influxdb", :git => "https://github.com/blom/puppet-influxdb.git"
+
 Usage
 -----
 
