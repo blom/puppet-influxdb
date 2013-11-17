@@ -1,5 +1,6 @@
 source "https://rubygems.org/"
 
+gem "influxdb"
 gem "puppet", ENV["PUPPET_VERSION"]
 gem "puppet-lint"
 gem "puppetlabs_spec_helper"
