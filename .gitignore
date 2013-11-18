@@ -2,5 +2,6 @@
 /.yardoc
 /Gemfile.lock
 /Vagrantfile
+/coverage
 /doc
 /pkg

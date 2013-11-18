@@ -1,3 +1,8 @@
+if ENV["SIMPLECOV"]
+  require "simplecov"
+  SimpleCov.start { add_filter "/spec/" }
+end
+
 require "rspec-puppet"
 require "webmock/rspec"
 
