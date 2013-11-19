@@ -39,7 +39,7 @@ the moment.
 
 #### influxdb::ruby
 
-Installs the InfluxDB Ruby library.
+Installs the [InfluxDB Ruby library][3].
 
     class { 'influxdb::ruby':
     }
@@ -48,13 +48,14 @@ Takes the following optional attributes:
 
 * `package_ensure`: Ensure the presence (`present` or `installed`) or absence
   (`absent`) of the gem (default: `present`). The `package` type is currently
-  not used to install the gem due to a bug in Puppet - see the [manifest][3]
+  not used to install the gem due to a bug in Puppet - see the [manifest][4]
   for more information.
 
-### Providers
+### Types and providers
 
-The providers can take an optional configuration hash where the keys correspond
-to the values that the [Ruby client][4] accepts. For example:
+The types below can take an optional configuration hash where its keys
+correspond to the values that the Ruby library (used to talk to the InfluxDB
+instance) accepts. For example:
 
     $influxdb_config = {
       host     => 'localhost',
@@ -86,5 +87,5 @@ Takes the following attributes:
 
 [1]: http://influxdb.org/
 [2]: http://docs.puppetlabs.com/references/latest/type.html#package-provider-rpm
-[3]: https://github.com/blom/puppet-influxdb/blob/master/manifests/ruby.pp
-[4]: https://github.com/influxdb/influxdb-ruby
+[3]: https://github.com/influxdb/influxdb-ruby
+[4]: https://github.com/blom/puppet-influxdb/blob/master/manifests/ruby.pp
