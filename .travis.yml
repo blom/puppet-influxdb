@@ -8,5 +8,6 @@ rvm:
   - 1.9.3
   - 2.0.0
 matrix:
-  allow_failures:
+  exclude:
     - rvm: 2.0.0
+      env: PUPPET_VERSION="~> 2.7.0"
