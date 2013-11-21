@@ -1,6 +1,7 @@
 require "rake/clean"
 require "rspec/core/rake_task"
 require "puppet-lint/tasks/puppet-lint"
+require "yard"
 
 CLOBBER.include %w(.yardoc coverage doc pkg)
 task :default => [:spec, :lint]
@@ -13,4 +14,7 @@ end
 
 RSpec::Core::RakeTask.new :spec do |t|
   t.pattern = "spec/**/*_spec.rb"
+end
+
+YARD::Rake::YardocTask.new do |t|
 end
