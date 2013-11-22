@@ -28,7 +28,7 @@ describe Puppet::Type.type(:influxdb_database_user) do
           described_class.new :title    => "foo",
                               :ensure   => "present",
                               :password => "password"
-        end.to raise_error Puppet::ResourceError, /database is required\z/
+        end.to raise_error /database is required\z/
       end
     end
 
@@ -38,7 +38,7 @@ describe Puppet::Type.type(:influxdb_database_user) do
           described_class.new :title    => "foo",
                               :ensure   => "present",
                               :database => "database"
-        end.to raise_error Puppet::ResourceError, /password is required\z/
+        end.to raise_error /password is required\z/
       end
     end
   end
