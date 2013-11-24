@@ -107,6 +107,22 @@ Takes the following attributes:
 * `database`: The user's database.
 * `config`: Optional configuration hash.
 
+#### influxdb_cluster_admin
+
+Manages cluster admins.
+
+    influxdb_cluster_admin { 'username':
+      ensure   => present,
+      password => 'foobar',
+    }
+
+Takes the following attributes:
+
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the admin.
+* `username`: The admin's username. Overrides the title, if present.
+* `password`: The admin's password.
+* `config`: Optional configuration hash.
+
 [1]: http://influxdb.org/
 [2]: http://docs.puppetlabs.com/references/latest/type.html#package-provider-rpm
 [3]: https://github.com/influxdb/influxdb-ruby
