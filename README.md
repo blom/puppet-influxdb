@@ -54,6 +54,9 @@ Takes the following optional attributes:
 
 ### Types and providers
 
+These providers use the InfluxDB Ruby library that you can install using the
+`influxdb::ruby` class.
+
 The types below can take an optional configuration hash where its keys
 correspond to the values that the Ruby library (used to talk to the InfluxDB
 instance) accepts. For example:
@@ -98,8 +101,7 @@ Manages database users.
 
 Takes the following attributes:
 
-* `ensure`: Ensure the presence (`present`) or absence (`absent`) of a
-  database user.
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the user.
 * `username`: The user's username. Overrides the title, if present.
 * `password`: The user's password.
 * `database`: The user's database.
