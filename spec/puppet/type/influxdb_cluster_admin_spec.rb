@@ -25,8 +25,7 @@ describe Puppet::Type.type(:influxdb_cluster_admin) do
     context "missing password parameter" do
       specify do
         expect do
-          described_class.new :title  => "foo",
-                              :ensure => "present"
+          described_class.new :title  => "foo", :ensure => "present"
         end.to raise_error /password is required\z/
       end
     end

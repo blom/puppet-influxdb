@@ -2,7 +2,7 @@ Puppet::Type.newtype(:influxdb_database) do
   @doc = "Manage InfluxDB databases"
   ensurable
 
-  newparam(:name, :namevar => true) do
+  newparam :name do
     desc "Database name"
     isnamevar
   end
