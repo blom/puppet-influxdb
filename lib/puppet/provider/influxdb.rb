@@ -1,8 +1,3 @@
-begin
-  require "rubygems"
-rescue LoadError
-end
-
 require "influxdb"
 
 class Puppet::Provider::InfluxDB < Puppet::Provider
