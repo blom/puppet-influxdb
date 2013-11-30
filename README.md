@@ -4,6 +4,9 @@ puppet-influxdb
 [![Build Status](https://travis-ci.org/blom/puppet-influxdb.png)](https://travis-ci.org/blom/puppet-influxdb)
 [![Coverage Status](https://coveralls.io/repos/blom/puppet-influxdb/badge.png?branch=master)](https://coveralls.io/r/blom/puppet-influxdb?branch=master)
 
+* [Homepage](https://github.com/blom/puppet-influxdb)
+* [Puppet Forge](https://forge.puppetlabs.com/blom/influxdb)
+
 Puppet module for [InfluxDB][1].
 
 Installation
