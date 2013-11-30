@@ -11,7 +11,7 @@ Installation
 
 ### Puppet Forge
 
-Coming soon.
+    puppet module install blom/influxdb
 
 ### Puppetfile
 
