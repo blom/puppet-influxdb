@@ -12,10 +12,6 @@ Puppet module for [InfluxDB][1].
 Installation
 ------------
 
-### Puppet Forge
-
-    puppet module install blom/influxdb
-
 ### Puppetfile
 
     mod "influxdb", :git => "https://github.com/blom/puppet-influxdb.git"
