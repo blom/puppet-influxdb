@@ -3,7 +3,7 @@ require "spec_helper"
 describe "influxdb::server" do
   let(:facts) { {:architecture => 'x86_64'} }
 
-  it { should include_class "influxdb::params" }
+  it { should contain_class "influxdb::params" }
 
   it { should have_resource_count(2) }
   it { should have_package_resource_count(1) }

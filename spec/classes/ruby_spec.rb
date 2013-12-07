@@ -3,7 +3,7 @@ require "spec_helper"
 describe "influxdb::ruby" do
   let(:exec_conditional) { 'gem list influxdb | egrep -q "^influxdb "'}
 
-  it { should include_class "influxdb::params" }
+  it { should contain_class "influxdb::params" }
 
   it { should have_resource_count(1) }
   it { should have_exec_resource_count(1) }
