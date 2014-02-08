@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "influxdb::server" do
+describe "influxdb::server", :type => :class do
   let(:facts) { {:architecture => 'x86_64'} }
 
   it { should contain_class "influxdb::params" }
