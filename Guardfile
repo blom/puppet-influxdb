@@ -2,7 +2,7 @@ guard :rspec do
   watch(%r{^spec/.+_spec\.rb})
   watch("spec/spec_helper.rb") { "spec" }
   watch(%r{^lib/(.+)\.rb}) { |_, m| "spec/#{m}_spec.rb" }
-  watch(%r{^manifests/(.+)\.pp}) { |_, m| "spec/manifests/#{m}_spec.rb" }
+  watch(%r{^manifests/(.+)\.pp}) { |_, m| "spec/classes/#{m}_spec.rb" }
 end
 
 guard :shell do
