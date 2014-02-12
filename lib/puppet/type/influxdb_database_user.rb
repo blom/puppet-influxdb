@@ -1,6 +1,10 @@
 Puppet::Type.newtype :influxdb_database_user do
   @doc = "Manage InfluxDB database users"
-  ensurable
+  ensurable do
+    newvalue(:present) { provider.create }
+    newvalue(:absent) { provider.destroy }
+    defaultto :present
+  end
 
   validate do
     [:database, :password].each do |param|

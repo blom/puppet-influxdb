@@ -79,12 +79,12 @@ instance) accepts. For example:
 Manages databases.
 
     influxdb_database { 'database_name':
-      ensure => present,
     }
 
 Takes the following attributes:
 
-* `ensure`: Ensure the presence (`present`) or absence (`absent`) of a database.
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of a database
+  (default: `present`).
 * `config`: Optional configuration hash.
 
 #### influxdb_database_user
@@ -92,14 +92,14 @@ Takes the following attributes:
 Manages database users.
 
     influxdb_database_user { 'username':
-      ensure   => present,
       password => 'foobar',
       database => 'database_name',
     }
 
 Takes the following attributes:
 
-* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the user.
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the user
+  (default: `present`).
 * `username`: The user's username. Overrides the title, if present.
 * `password`: The user's password.
 * `database`: The user's database.
@@ -110,13 +110,13 @@ Takes the following attributes:
 Manages cluster admins.
 
     influxdb_cluster_admin { 'username':
-      ensure   => present,
       password => 'foobar',
     }
 
 Takes the following attributes:
 
-* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the admin.
+* `ensure`: Ensure the presence (`present`) or absence (`absent`) of the admin
+  (default: `present`).
 * `username`: The admin's username. Overrides the title, if present.
 * `password`: The admin's password.
 * `config`: Optional configuration hash.

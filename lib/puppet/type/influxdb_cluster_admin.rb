@@ -1,6 +1,10 @@
 Puppet::Type.newtype :influxdb_cluster_admin do
   @doc = "Manage InfluxDB cluster admins"
-  ensurable
+  ensurable do
+    newvalue(:present) { provider.create }
+    newvalue(:absent) { provider.destroy }
+    defaultto :present
+  end
 
   validate do
     if self[:ensure] == :present && self[:password].nil?

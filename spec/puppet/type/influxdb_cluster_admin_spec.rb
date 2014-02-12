@@ -7,9 +7,19 @@ describe Puppet::Type.type(:influxdb_cluster_admin) do
     }.to raise_error Puppet::Error, /Title or name must be provided/
   end
 
+  describe "ensure" do
+    it "defaults to present" do
+      type = described_class.new :username => "foo",
+                                 :password => "123"
+      expect(type[:ensure]).to eq :present
+    end
+  end
+
   describe "username" do
     it "is a namevar" do
-      expect { described_class.new :username => "foo" }.not_to raise_error
+      expect do
+        described_class.new :ensure => "absent", :username => "foo"
+      end.not_to raise_error
     end
   end
 
