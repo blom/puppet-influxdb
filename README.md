@@ -85,6 +85,7 @@ Takes the following attributes:
 
 * `ensure`: Ensure the presence (`present`) or absence (`absent`) of a database
   (default: `present`).
+* `name`: Database name. Overrides the title, if present.
 * `config`: Optional configuration hash.
 
 #### influxdb_database_user
