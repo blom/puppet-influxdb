@@ -8,8 +8,19 @@ describe Puppet::Type.type(:influxdb_database).provider(:default) do
   describe "#create" do
     it "creates a database" do
       InfluxDB::Client.any_instance.
-                       should_receive(:create_database).with(database)
+                       should_receive(:create_database).with(database, {})
       provider.create
+    end
+
+    context "when replication_factor is set to 3" do
+      it "creates a database with replicationFactor set to 3" do
+        InfluxDB::Client.any_instance.
+                         should_receive(:create_database).
+                         with(database, "replicationFactor" => 3)
+        provider.stub(:resource).
+                 and_return("name" => database, "replication_factor" => 3)
+        provider.create
+      end
     end
   end
 
