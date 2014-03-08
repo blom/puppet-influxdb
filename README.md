@@ -13,7 +13,9 @@ Installation
 
 ### Puppetfile
 
-    mod "influxdb", :git => "https://github.com/blom/puppet-influxdb.git"
+``` ruby
+mod "influxdb", :git => "https://github.com/blom/puppet-influxdb.git"
+```
 
 Usage
 -----
@@ -24,8 +26,10 @@ Usage
 
 Installs the InfluxDB server.
 
-    class { 'influxdb::server':
-    }
+``` puppet
+class { 'influxdb::server':
+}
+```
 
 Takes the following optional attributes:
 
@@ -40,8 +44,10 @@ the moment.
 
 Installs the [InfluxDB Ruby library][3].
 
-    class { 'influxdb::ruby':
-    }
+``` puppet
+class { 'influxdb::ruby':
+}
+```
 
 Takes the following optional attributes:
 
@@ -59,27 +65,31 @@ The types below can take an optional configuration hash where its keys
 correspond to the values that the Ruby library (used to talk to the InfluxDB
 instance) accepts. For example:
 
-    $influxdb_config = {
-      host     => 'localhost',
-      port     => 8086,
-      username => 'root',
-      password => 'root',
-    }
+``` puppet
+$influxdb_config = {
+  host     => 'localhost',
+  port     => 8086,
+  username => 'root',
+  password => 'root',
+}
 
-    Influxdb_database {
-      config => $influxdb_config,
-    }
+Influxdb_database {
+  config => $influxdb_config,
+}
 
-    influxdb_database { ['foo', 'bar']:
-      ensure => present,
-    }
+influxdb_database { ['foo', 'bar']:
+  ensure => present,
+}
+```
 
 #### influxdb_database
 
 Manages databases.
 
-    influxdb_database { 'database_name':
-    }
+``` puppet
+influxdb_database { 'database_name':
+}
+```
 
 Takes the following attributes:
 
@@ -93,10 +103,12 @@ Takes the following attributes:
 
 Manages database users.
 
-    influxdb_database_user { 'username':
-      password => 'foobar',
-      database => 'database_name',
-    }
+``` puppet
+influxdb_database_user { 'username':
+  password => 'foobar',
+  database => 'database_name',
+}
+```
 
 Takes the following attributes:
 
@@ -111,9 +123,11 @@ Takes the following attributes:
 
 Manages cluster admins.
 
-    influxdb_cluster_admin { 'username':
-      password => 'foobar',
-    }
+``` puppet
+influxdb_cluster_admin { 'username':
+  password => 'foobar',
+}
+```
 
 Takes the following attributes:
 
