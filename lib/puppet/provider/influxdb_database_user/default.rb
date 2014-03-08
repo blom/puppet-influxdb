@@ -14,7 +14,7 @@ Puppet::Type.type(:influxdb_database_user).
 
   def exists?
     influxdb.get_database_user_list(resource["database"]).any? do |user|
-      user["username"] == resource["username"]
+      user["name"] == resource["username"]
     end
   end
 end

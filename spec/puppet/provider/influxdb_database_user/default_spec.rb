@@ -33,14 +33,14 @@ describe Puppet::Type.type(:influxdb_database_user).provider(:default) do
   describe "#exists?" do
     it "returns true when a database user exists" do
       InfluxDB::Client.any_instance.stub(:get_database_user_list).
-                       and_return([{"username" => username}])
+                       and_return([{"name" => username}])
       provider.stub(:resource).and_return({"username" => username})
       provider.exists?.should be_true
     end
 
     it "returns false when a database user does not exist" do
       InfluxDB::Client.any_instance.stub(:get_database_user_list).
-                       and_return([{"username" => "xyz"}])
+                       and_return([{"name" => "xyz"}])
       provider.stub(:resource).and_return({"username" => username})
       provider.exists?.should be_false
     end
