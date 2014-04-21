@@ -1,8 +1,11 @@
 puppet-influxdb
 ===============
 
-[![Build Status](https://travis-ci.org/blom/puppet-influxdb.png)](https://travis-ci.org/blom/puppet-influxdb)
-[![Coverage Status](https://coveralls.io/repos/blom/puppet-influxdb/badge.png?branch=master)](https://coveralls.io/r/blom/puppet-influxdb?branch=master)
+[![Build Status](http://img.shields.io/travis/blom/puppet-influxdb.svg)][travis]
+[![Coverage Status](http://img.shields.io/coveralls/blom/puppet-influxdb.svg)][coveralls]
+
+[travis]: https://travis-ci.org/blom/puppet-influxdb
+[coveralls]: https://coveralls.io/r/blom/puppet-influxdb
 
 * [Homepage](https://github.com/blom/puppet-influxdb)
 
